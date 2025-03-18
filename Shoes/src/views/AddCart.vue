@@ -30,7 +30,7 @@
         </div>
         <div class=" flex items-center text-white text-2xl font-bold">
             <div class="width-250 height-250">
-                <img src="file:///Users/muzaffernergiz/Downloads/Rectangle%201534.svg" alt="">
+                <img src="https://s3-alpha-sig.figma.com/img/62bd/5f12/dfbc5c1402f291c31b1dd89123a0eae3?Expires=1743379200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=bjz-PJcyINzUWKo0bPUo-ZMC~tEqRhGKvX28GG878dTHEUdFQekPUfTmU~~Teuuzl6kdnzJxgpYobNUDWB14Qz9LxooMCr1aQj9XU87MQMbx64~8PUTTZhMeFizQb8swbGcMSKa2PxBirrtyjjhzpwk3H4~LwHoDr5NfHZZ2FIUB3g7hTBMhiUiJWM7PWVb3Xbi88zEOveuTfAzIyjosfeuDAuF657uu92BXRYTrG0o20mCeHV4n61FAZKD2S0YPrzFQjLJZZZJ6S9qsbNBb22h7aqU8AN7nI0lqzJn7gEdRDJYqCF2EZwunIMm3ZdrYoPbe6Yhlpg4IJNt823XXbQ__" alt="">
             </div>
         </div>
     </div>
