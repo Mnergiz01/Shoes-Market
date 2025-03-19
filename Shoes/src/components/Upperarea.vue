@@ -15,7 +15,7 @@
   
       <!-- Sağ Kısım -->
       <div class="w-full md:w-1/2 flex justify-center items-center">
-        <img src="file:///Users/muzaffernergiz/Downloads/Frame%201168.svg" alt="Indirim Görseli" class="w-full max-w-xs md:max-w-sm"/>
+        <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1733f6cc-b764-4dee-80cf-4b01fd67041b/AIR+FORCE+1+%2707.png" alt="Indirim Görseli" class="w-full max-w-xs md:max-w-sm"/>
       </div>
     </div>
   </template>

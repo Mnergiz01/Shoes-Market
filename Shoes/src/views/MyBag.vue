@@ -7,7 +7,7 @@
                 <div v-for="i in 10" :key="i" class="flex flex-row gap-5 border-b pb-5">
                     <!-- Ürün Resmi -->
                     <div>
-                        <img src="file:///Users/muzaffernergiz/Downloads/Rectangle%201533%20(1).svg"
+                        <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1733f6cc-b764-4dee-80cf-4b01fd67041b/AIR+FORCE+1+%2707.png"
                             class="w-[165px] h-[165px]">
                     </div>
 
