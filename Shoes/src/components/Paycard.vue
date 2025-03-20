@@ -38,14 +38,21 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 
+// `Product` türünü tanımlıyoruz
+interface Product {
+    id: number;
+    title: string;
+    description: string;
+    price: number;
+    quantity?: number;
+}
+
 const showalert = ref(false);
 
-const props = defineProps({
-    product: {
-        type: Object,
-        required: true
-    }
-});
+// `product` prop'unu doğru şekilde tanımlıyoruz
+const props = defineProps<{
+    product: Product;
+}>();
 
 const quantity = ref(1);
 
@@ -54,17 +61,17 @@ onMounted(() => {
     if (!props.product) return;
 
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    const existingProduct = cart.find(item => item.title === props.product?.title);
+    const existingProduct = cart.find((item: Product) => item.title === props.product?.title);
 
     if (existingProduct) {
-        quantity.value = existingProduct.quantity;
+        quantity.value = existingProduct.quantity || 1; // Quantity varsa al, yoksa 1 yap
     }
 });
 
 // Updates the cart in local storage
 const updateCart = () => {
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    const existingProduct = cart.find(item => item.title === props.product.title);
+    const existingProduct = cart.find((item: Product) => item.title === props.product.title);
 
     if (existingProduct) {
         existingProduct.quantity = quantity.value;
