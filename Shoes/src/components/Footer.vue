@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-gray-900 text-white w-full  p-4 mt-10">
+    <footer class="bg-gray-900 text-white w-full  p-4 mt-5">
         <div class="flex items-center space-x-3 justify-between ms-8 me-8">
           <h2 class=" text-white hover:text-gray-500 transition-all duration-500 ease-in-out font-serif italic">
             Muzaffer Nergiz

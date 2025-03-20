@@ -12,7 +12,7 @@ const router = createRouter({
       component: Homepage,
     },
     {
-      path: '/add',
+      path: '/add/:id',
       name: 'AddCart',
       component: AddCart,
     },
@@ -21,6 +21,7 @@ const router = createRouter({
       name: 'MyBag',
       component: MyBag,
     },
+
     
   ],
 })

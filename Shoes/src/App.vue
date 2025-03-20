@@ -2,7 +2,7 @@
   <div class="flex flex-col min-h-screen">
     
     <main class="container mx-auto mt-10">
-      <Navbar class="w-full"></Navbar>
+      <Navbar></Navbar>
       <router-view></router-view>
     </main>
     <Footer></Footer>
@@ -18,7 +18,7 @@ import Footer from '@/components/Footer.vue'
 
 <style scoped>
 .container {
-  transform: scale(0.9);
-  /* Ekrandaki tüm içeriği %90 oranında küçült */
+  transform: scale(0.9); /* Ekrandaki tüm içeriği %90 oranında küçült */ /* Küçültme işlemi üst sol köşeden başlasın */
+  transform-origin: top center;
 }
 </style>

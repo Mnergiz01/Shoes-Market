@@ -46,8 +46,9 @@
                 d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1m-9-1a2 2 0 0 1 4 0v1h-4Zm8 13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9h2v1a1 1 0 0 0 2 0V9h4v1a1 1 0 0 0 2 0V9h2Z" />
             </svg>
             <h1 class="text-xl font-semibold text-gray-800 ml-2">View Cart</h1>
-            <p class="ml-3 bg-red-700 p-1 px-2 rounded-full text-white text-xs font-bold">
-              4
+            <!-- Sepet ürün sayısı -->
+            <p v-if="cartCount > 0" class="ml-3 bg-red-700 p-1 px-2 rounded-full text-white text-xs font-bold">
+              {{ cartCount }}
             </p>
           </div>
         </router-link>
@@ -55,3 +56,17 @@
     </div>
   </nav>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue';
+
+// Sepet ürünü sayısını tutacak değişken
+const cartCount = ref(0);
+
+// Sayfa yüklendiğinde sepeti kontrol et
+onMounted(() => {
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]'); // Sepet verisini al
+  cartCount.value = cart.length; // Sepetteki ürün sayısını al
+  console.log(cart)
+});
+</script>
