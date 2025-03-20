@@ -8,9 +8,9 @@
             </div>
             <div class="text-[#201b21] text-2xl font-medium">${{ product?.price }}</div>
         </div>
-        
+
         <div class="w-full h-px bg-[#e9ebee] mt-6"></div>
-        
+
         <!-- Miktar Seçici ve Sepete Ekle -->
         <div class="flex justify-between items-center mt-6">
             <div class="px-4 py-3 rounded-lg shadow-md outline outline-1 outline-[#e9ebee] flex items-center gap-4">
@@ -22,14 +22,23 @@
                 Sepete Ekle
             </button>
         </div>
-        
+
         <p class="text-end mt-4">Üründen {{ quantity }} Adet Aldınız</p>
-        <p v-if="addedToCartMessage" class="text-green-500 font-semibold mt-2">Ürün sepete eklendi!</p>
+
+        <!-- Success Alert with Transition -->
+        <transition name="fade">
+            <div v-if="showalert" class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+                <span class="font-medium">Success alert!</span> Ürün sepete eklendi!
+            </div>
+        </transition>
+
     </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+
+const showalert = ref(false);
 
 const props = defineProps({
     product: {
@@ -39,12 +48,11 @@ const props = defineProps({
 });
 
 const quantity = ref(1);
-const addedToCartMessage = ref(false);
 
 // Handles initializing the quantity when the component is mounted
 onMounted(() => {
     if (!props.product) return;
-    
+
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
     const existingProduct = cart.find(item => item.title === props.product?.title);
 
@@ -57,13 +65,13 @@ onMounted(() => {
 const updateCart = () => {
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
     const existingProduct = cart.find(item => item.title === props.product.title);
-    
+
     if (existingProduct) {
         existingProduct.quantity = quantity.value;
     } else {
         cart.push({ ...props.product, quantity: quantity.value });
     }
-    
+
     localStorage.setItem('cart', JSON.stringify(cart));
 };
 
@@ -78,9 +86,20 @@ const changeQuantity = (amount: number) => {
 // Adds product to the cart and shows a success message
 const addToCart = () => {
     updateCart();
-    addedToCartMessage.value = true;
+    showalert.value = true;
     setTimeout(() => {
-        addedToCartMessage.value = false;
+        showalert.value = false;
     }, 2000);
 };
 </script>
+
+<style scoped>
+/* Fade Transition Styles */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+</style>
