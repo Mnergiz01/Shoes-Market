@@ -19,8 +19,11 @@ import Footer from '@/components/Footer.vue'
 </script>
 
 <style scoped>
+
 .container {
-  transform: scale(0.9); /* Ekrandaki tüm içeriği %90 oranında küçült */ /* Küçültme işlemi üst sol köşeden başlasın */
-  transform-origin: top center;
+  transform: scale(0.8); /* Sayfanın ölçeğini %80'e düşürüyor */
+  transform-origin: top center; /* Küçültme işleminin merkezini belirtiyor */
+  width: 125%; /* İçeriğin kaymasını önlemek için genişliği artır */
 }
+
 </style>
