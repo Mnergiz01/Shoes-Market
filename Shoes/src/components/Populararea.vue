@@ -22,5 +22,5 @@ const props = defineProps({
 })
 
 // products dizisinden ilk 5 öğeyi filtreleyerek alıyoruz
-const filteredProducts = computed(() => props.products.slice(0, 5))
+const filteredProducts = computed(() => props.products.slice(0, 4))
 </script>
