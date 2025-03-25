@@ -138,7 +138,7 @@ onMounted(() => {
   loadCart();
 });
 
-// Ödeme yap butonuna tıklama
+// Ödeme yap butonuna tıklamanpm
 const handlePayment = () => {
   const storedUser = localStorage.getItem('user');
   if (!storedUser) {

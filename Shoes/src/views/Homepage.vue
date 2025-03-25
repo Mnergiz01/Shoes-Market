@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen ">
+    <div class="h-full ">
         <!-- Loading göstergesi -->
         <div v-if="isLoading" class="fixed inset-0  bg-opacity-50 flex items-center justify-center z-50">
             <div class="text-black text-3xl">Yükleniyor...</div>

@@ -46,6 +46,20 @@
         </router-link>
       </div>
     </div>
+
+    <!-- Mobil Menü (Hamburger Menu) -->
+    <div class="block md:hidden">
+      <button @click="toggleMobileMenu" class="text-gray-800 p-2 rounded-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12h18M3 6h18M3 18h18"></path>
+        </svg>
+      </button>
+      <div v-if="mobileMenuOpen" class="absolute top-0 left-0 w-full bg-white p-4 shadow-md">
+        <router-link to="/" @click="mobileMenuOpen = false" class="block text-gray-800 py-2">Home</router-link>
+        <router-link to="/login" @click="mobileMenuOpen = false" class="block text-gray-800 py-2">Giriş Yap</router-link>
+        <router-link to="/mybag" @click="mobileMenuOpen = false" class="block text-gray-800 py-2">View Cart</router-link>
+      </div>
+    </div>
   </nav>
 </template>
 
@@ -57,6 +71,7 @@ import { useRouter } from 'vue-router';
 const cartCount = ref(0);
 const isLoggedIn = ref(false);
 const router = useRouter();
+const mobileMenuOpen = ref(false);
 
 // Sayfa yüklendiğinde giriş durumu ve sepeti kontrol et
 onMounted(() => {
@@ -73,4 +88,18 @@ const handleLogout = () => {
   isLoggedIn.value = false;
    // Login sayfasına yönlendir
 };
+
+// Mobil menüyü açma/kapama
+const toggleMobileMenu = () => {
+  mobileMenuOpen.value = !mobileMenuOpen.value;
+};
 </script>
+
+<style scoped>
+/* Mobil cihazlar için menü düzenlemeleri */
+@media (max-width: 768px) {
+  .block.md:hidden {
+    display: block;
+  }
+}
+</style>

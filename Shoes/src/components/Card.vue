@@ -1,7 +1,7 @@
 <template>
   <router-link :to="{ name: 'AddCart', params: { id: props.product.id } }">
-    <div class="flex justify-center mt-20">
-      <div class="flex flex-col items-center w-60">
+    <div class="flex justify-center  mt-20">
+      <div class="flex flex-col items-center w-full sm:w-60 md:w-72 lg:w-80">
         <!-- Kart Resim Alanı -->
         <div class="w-full h-72 bg-white rounded-3xl shadow-lg overflow-hidden flex justify-center items-center hover:scale-105 transform transition duration-300">
           <img :src="product.images?.[0]" 
